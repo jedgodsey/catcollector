@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+All Cats
+{% endblock %}
+
+{% block content %}
+    <h1>WITNESS MY CATS!</h1>
+
+    {% for cat in cats %}
+        <div class='card'>
+            <span class="card-title">{{ cat.name }}</span>
+            <p>Breed: {{ cat.breed }}</p>
+            <p>Description: {{ cat.descriptioon }}</p>
+            {% if cat.age > 1 %}
+                <p>Age: {{ cat.age }}</p>
+            {% else %}
+                <p>Age: Kitten</p>
+            {% endif %}
+        </div>
+    {% endfor %}
+
+{% endblock %}
